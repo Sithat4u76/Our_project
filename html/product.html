@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <title>Product</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar" id="sideBar">
+            <button class="close-btn" onclick="MenuToggle()">✖</button>
+            <div class="profile" >
+                <div class="img" id="preview1"></div>
+            </div>
+            <div class="role"><span>Role:</span>Admin</div>
+            <ul>
+                <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
+                <li><a href="/html/category.html"><img src="/assets/icons/category.png" width="30px"> Category </a></li>
+                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
+                <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
+                <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
+                <li><a href="/html//salereport.html"><img src="/assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
+                <li><a href="/html/user.html"><img src="/assets/icons/circle-user.png" width="30px"> User </a></li>
+                <li><a href="/html/setting.html"><img src="/assets/icons/settings-sliders.png" width="30px"> Setting </a></li>
+                <li><a href="/index.html"> <img src="/assets/icons/exit.png" width="30px"> Log Out </a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="header">
+                <div class="menu" onclick="MenuToggle()""><img src="/assets/icons/menu-burger.png" alt=""></div>
+                <h1>POS Mangement System</h1>
+                <div class="right_header">
+                    <input class="input-date" type="text" id="myFormattedDate" readonly>
+                    <input class="input-date" type="time" id="myTime">
+                    <div class="icon-chat"><img src="/assets/icons/comment-alt.png" width="30px"></div>
+                    <div class="profileName">Sithat</div>
+                    <div class="img" id="preview2"></div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- remove my code and-->
+            <!-- write content here --> 
+            <div class="product-container">
+                <h1>Product Admin Panel</h1>
+                <button class="btn btn-add" onclick="openAddModal()">+ Add Product</button>
+
+                <table id="productTable">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+
+                <!-- Add/Edit Modal -->
+                <div id="addModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeAddModal()">&times;</span>
+                    <h2 id="modalTitle">Add New Product</h2>
+                    <form id="productForm">
+                    <input type="hidden" name="id" id="productId" />
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" id="productName" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" step="0.01" name="price" id="productPrice" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Original Price (optional)</label>
+                        <input type="number" step="0.01" name="originalPrice" id="productOriginalPrice" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="url" name="image" id="productImage" placeholder="https://placehold.co/300x200 " />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="text" name="stock" id="productStock" value="In Stock" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" name="category" id="productCategory" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description" id="productDescription" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Specifications (JSON)</label>
+                        <textarea name="specs" id="productSpecs" rows="3" placeholder='{"Battery": "30 hours", "Bluetooth": "5.0"}'></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Inclusions (JSON Array)</label>
+                        <textarea name="inclusions" id="productInclusions" rows="3" placeholder='["Cable", "Case"]'></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-add">Save Product</button>
+                    </form>
+                </div>
+                </div>
+
+                
+            </div>
+            <!-- end content --> 
+        </div>
+    </div>
+    <script src="/js/product.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

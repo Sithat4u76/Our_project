@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sale.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel="stylesheet" href="/css/user.css">
+    <title>User</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar" id="sideBar">
+            <button class="close-btn" onclick="MenuToggle()">✖</button>
+            <div class="profile" >
+                <div class="img" id="preview"></div>
+            </div>
+            <div class="role"><span>Role:</span>Admin</div>
+            <ul>
+                <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
+                <li><a href="/html/category.html"><img src="/assets/icons/category.png" width="30px"> Category </a></li>
+                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
+                <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
+                <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
+                <li><a href="/html//salereport.html"><img src="/assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
+                <li><a href="/html/user.html"><img src="/assets/icons/circle-user.png" width="30px"> User </a></li>
+                <li><a href="/html/setting.html"><img src="/assets/icons/settings-sliders.png" width="30px"> Setting </a></li>
+                <li><a href="/index.html"> <img src="/assets/icons/exit.png" width="30px"> Log Out </a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="header">
+                <div class="menu" onclick="MenuToggle()""><img src="/assets/icons/menu-burger.png" alt=""></div>
+                <h1>POS Mangement System</h1>
+                <div class="right_header">
+                    <input type="text" id="myFormattedDate" readonly>
+                    <input type="time" id="myTime">
+                    <div class="icon-chat"><img src="/assets/icons/comment-alt.png" width="30px"></div>
+                    <div class="profileName">Sithat <br> Admin</div>
+                    <div class="img" id="preview2"></div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- remove my code and-->
+            <!-- write content here --> 
+
+
+            <div class="user-content" id="user-content">
+               
+                <!-- Add User Modal -->
+                <div id="addModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeAddModal()">&times;</span>
+                    <h2>Add New User</h2>
+
+                    <!-- Add User Form -->
+                    <form id="addForm">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                        <label>ID:</label>
+                        <input type="text" name="id">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" name="username">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" name="password">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Phone:</label>
+                        <input type="text" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Role:</label>
+                        <input type="text" name="role">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Image URL:</label>
+                        <input type="text" name="image">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Date of Birth:</label>
+                        <input type="date" name="dob">
+                        </div>
+
+                        
+
+
+                        <div class="form-group">
+                        <label>Working Day:</label>
+                        <select name="working_day" id="working_day">
+                            <option value="">Select Day</option>
+                            <option value="Monday-Friday">Monday - Friday</option>
+                            <option value="Monday-Saturday">Monday - Saturday</option>
+                            <option value="Monday-Sunday">Monday - Sunday</option>
+                            <option value="Custom">Custom</option>
+                        </select>
+                        </div>
+
+                        <div class="form-group">
+                        <label>Working Time:</label>
+                        <select name="working_time" id="working_time">
+                            <option value="">Select Time</option>
+                            <option value="08:00 AM - 05:00 PM">08:00 AM - 05:00 PM</option>
+                            <option value="09:00 AM - 06:00 PM">09:00 AM - 06:00 PM</option>
+                            <option value="10:00 AM - 07:00 PM">10:00 AM - 07:00 PM</option>
+                            <option value="Custom">Custom</option>
+                        </select>
+                        </div>
+
+                        <div class="form-group">
+                        <label>Salary:</label>
+                        <input type="number" name="salary">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Status:</label>
+                        <input type="text" name="stature">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Village:</label>
+                        <input type="text" name="village">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Commune:</label>
+                        <input type="text" name="commune">
+                        </div>
+
+                        <div class="form-group">
+                        <label>District:</label>
+                        <input type="text" name="district">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Province:</label>
+                        <input type="text" name="province">
+                        </div>
+
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="submit">Add User</button>
+                        <button type="button" onclick="closeAddModal()">Cancel</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+                <!-- Edit User Modal -->
+                <div id="editModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeEditModal()">&times;</span>
+                        <h2>Edit User</h2>
+
+                        <form id="editForm">
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                <label>ID:</label>
+                                    <input type="hidden" id="editId" name="id">
+                                    <input type="text" id="editName" name="name" required readonly style="background:#eee;">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Username:</label>
+                                    <input type="text" id="editUsername" name="username">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password:</label>
+                                    <input type="password" id="editPassword" name="password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="email" id="editEmail" name="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Phone:</label>
+                                    <input type="text" id="editPhone" name="phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Role:</label>
+                                    <input type="text" id="editRole" name="role">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Image URL:</label>
+                                    <input type="text" id="editImage" name="image">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Date of Birth:</label>
+                                    <input type="date" id="editDob" name="dob">
+                                </div>
+
+                                <div class="form-group">
+                                <label>Working Day:</label>
+                                <select id="editWorkingDay" name="working_day">
+                                    <option value="">Select Day</option>
+                                    <option value="Monday-Friday">Monday - Friday</option>
+                                    <option value="Monday-Saturday">Monday - Saturday</option>
+                                    <option value="Monday-Sunday">Monday - Sunday</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                                </div>
+
+                                <div class="form-group">
+                                <label>Working Time:</label>
+                                <select id="editWorkingTime" name="working_time">
+                                    <option value="">Select Time</option>
+                                    <option value="08:00 AM - 05:00 PM">08:00 AM - 05:00 PM</option>
+                                    <option value="09:00 AM - 06:00 PM">09:00 AM - 06:00 PM</option>
+                                    <option value="10:00 AM - 07:00 PM">10:00 AM - 07:00 PM</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                                </div>
+
+                                
+
+                                <div class="form-group">
+                                    <label>Salary:</label>
+                                    <input type="number" id="editSalary" name="salary">
+                                </div>
+
+                                <div class="form-group">
+                                <label>Status:</label>
+                                <input type="text" id="editStature" name="stature">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Village:</label>
+                                    <input type="text" id="editVillage" name="village">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Commune:</label>
+                                    <input type="text" id="editCommune" name="commune">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>District:</label>
+                                    <input type="text" id="editDistrict" name="district">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Province:</label>
+                                    <input type="text" id="editProvince" name="province">
+                                </div>
+
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="submit">Save Changes</button>
+                                <button type="button" onclick="closeEditModal()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Header -->
+                <div class="user-header">
+                    <div class="stats">
+                        <span>All Users: <strong>1</strong></span>
+                        <span>Projects: <strong>1</strong></span>
+                    </div>
+                    <div class="actions">
+                        <button class="settings">Table settings</button>
+                    </div>
+                    </div>
+
+                    <!-- Add User Button -->
+                    <div class="add-user">
+                    <button class="add-btn" onclick="openAddModal()">+ Add new user</button>
+                </div>
+                <!-- End Header -->
+                
+                <table id="user-table">
+                    <thead>
+                        <tr>
+                        <th><input type="checkbox" id="select-all"></th>
+                        
+                        <th>ID</th>
+                        <th>USER</th>
+                        <th>USER ROLE</th>
+                        <th>STATUS</th>
+                        <th>PHONE</th>
+                        <th>PROMOTE</th>
+                        <th>EMAIL</th>
+                        <th>LAST LOGIN</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="row">
+                        <!-- contetn in js -->
+                        
+                        <!-- More rows can be added here -->
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span>Rows per page:</span>
+                    <select id="rows-per-page">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <span>1-10 of 100</span>
+                    <div class="page-buttons">
+                        <button><</button>
+                        <button class="active">1</button>
+                        <button>></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/user.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

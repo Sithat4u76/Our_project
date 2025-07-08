@@ -1,0 +1,168 @@
+ .section_1 {
+        display: flex;
+      }
+      .Welcome {
+
+        width: 95%;
+        min-height: 140vh;  
+        padding: 40px;
+        border-radius: 10px;
+        margin: 130px 40px 20px;
+        background-color: white;
+        box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.611);
+
+      }
+      .Welcome h1 {
+        color: rgb(28, 144, 215);
+        font-size: 30px;
+     
+      }
+      #hi {
+        color: rgb(28, 144, 215);
+      }
+       .dashboard {
+        width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    
+    }
+    .chart{
+      width: 100%;
+    }
+
+    .card .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h4 {
+      margin: 0;
+      font-size: 16px;
+      color: #777;
+    }
+
+    .card .value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .icon {
+      font-size: 28px;
+    }
+
+    .students {
+       background-color: #c8b0e3; 
+      }
+    .students .value { 
+      color: #7e22ce; 
+    }
+    .students .icon {
+       color: #7e22ce;
+       }
+
+    .teachers { 
+      background-color: #e0f2fe; 
+    }
+    .teachers .value { 
+      color: #0284c7;
+     }
+    .teachers .icon {
+       color: #0284c7; 
+      }
+
+    .parents { 
+      background-color: #ffe4e6;
+     }
+    .parents .value {
+       color: #db2777;
+      
+      }
+    .parents .icon {
+       color: #db2777; 
+      }
+
+    .earnings { 
+      
+      background-color: #dcfce7; 
+    }
+    .earnings .value { 
+      color: #16a34a; 
+    }
+    .earnings .icon {
+       color: #16a34a; 
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+       margin-top: 20px;
+         /* background-color: white;
+          box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.611);
+          border-radius: 10px;
+          overflow: hidden; */
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.611);
+    }
+    th{
+        background-color: rgb(8, 162, 245);
+        font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+        color: white;
+        font-size: 15px;
+    }
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+     
+    }
+    td{
+        font-family: "Rowdies", sans-serif;
+        color: rgb(8, 162, 245);
+        background-color:#c3e0ef;
+    }
+    td button{
+        padding: 5px 13px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.611);
+    }
+   td .btn_add{
+    background-color: springgreen;
+   }
+   td .btn_add:active{
+    background-color: rgb(93, 225, 83);
+   transform: scale(0.9);
+ 
+   }
+   td .btn_update{
+    background-color: rgb(8, 162, 245);
+   }
+   td .btn_update:active{
+    background-color: rgb(28, 105, 146);
+    transform: scale(0.9);
+   }
+   td .btn_delete{
+    background-color:rgb(222, 46, 46);
+   }
+   td .btn_delete:active{
+    background-color:rgb(128, 44, 44);
+    transform: scale(0.9);
+   }

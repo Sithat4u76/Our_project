@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sale.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar" id="sideBar">
+            <button class="close-btn" onclick="MenuToggle()">✖</button>
+            <div class="profile" >
+                <div class="img" id="preview1"></div>
+            </div>
+            <div class="role"><span>Role:</span>Admin</div>
+            <ul>
+                <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
+                <li><a href="/html/category.html"><img src="/assets/icons/category.png" width="30px"> Category </a></li>
+                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
+                <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
+                <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
+                <li><a href="/html//salereport.html"><img src="/assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
+                <li><a href="/html/user.html"><img src="/assets/icons/circle-user.png" width="30px"> User </a></li>
+                <li><a href="/html/setting.html"><img src="/assets/icons/settings-sliders.png" width="30px"> Setting </a></li>
+                <li><a href="/index.html"> <img src="/assets/icons/exit.png" width="30px"> Log Out </a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="header">
+                <div class="menu" onclick="MenuToggle()""><img src="/icon/menu-burger.png" alt=""></div>
+                <h1>POS Mangement System</h1>
+                <div class="right_header">
+                    <input type="text" id="myFormattedDate" readonly>
+                    <input type="time" id="myTime">
+                    <div class="icon-chat"><img src="/assets/icons/comment-alt.png" width="30px"></div>
+                    <div class="profileName">Sithat</div>
+                    <div class="img" id="preview2"></div>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- remove my code and-->
+            <!-- write content here --> 
+
+            
+            <div class="profile_content" id="profile_content">
+                <!-- in js  -->
+                <h1>My Profile</h1>
+                <div class="profile_and_details">
+                    <div class="profile_infor">
+                        <h2>Profile</h2>
+                        <div class="my_profile" id="my_profile">
+                            <div class="img">
+                                <input type="file" id="imageInput" class="imageInput">
+                                <img class="previewImg" src="/assets/icons/user-headset.png" width="100%">
+                            </div>
+                            <label for="imageInput" class="custom-file-upload">Change</label>
+                            <p id="profile_id">ID: <span>10000</span></p>
+                            <p class="my_name">Sithat</p>
+                            <p class="my_role">Administor</p>
+                        </div>
+                        <ul>
+                            <li><a href="#"><img src="/assets/icons/smartphone-call.png" width="25px" height="18px"><p>0964069688</p></a></li>
+                            <li><a href="#"><img src="/assets/icons/envelope.png" width="18px"><p>sithat4u76@gmail.com</p></a></li>
+                            <li><a href="#"><img src="/assets/icons/calendar-lines.png" width="18px"><p>01-08-2005</p></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="profile_details">
+                        <div class="title"><h2>Details</h2></div>
+                        <div class="profile_detail_content">
+                            <div class="label">
+                                <div class="label_working">
+                                    <h4>Working</h4>
+                                    <p>Working day:</p>
+                                    <p>Working time:</p>
+                                    <p>Salary: </p>
+                                    <p>Stature: </p>
+                                </div>
+                                <div class="label_address">
+                                    <h4>Address</h4>
+                                    <p>Village: </p>
+                                    <p>Commune: </p>
+                                    <p>District: </p>
+                                    <p>Province: </p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <div class="txt_working">
+                                    <p>Monday-Friday</p>
+                                    <p>7:00-4:00</p>
+                                    <p>$300</p>
+                                    <p>Not Married</p>
+                                </div>
+                                <div class="space"></div>
+                                <div class="txt_address">
+                                    <p>Beong Pring</p>
+                                    <p>Beong Pring</p>
+                                    <p>Battambamg</p>
+                                    <p>Battambamg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login_details">
+                    <div class="label">
+                        <h2>Authentication Details</h2>
+                        <p>User Name: </p>
+                        <p>Last Login: </p>
+                        <p>Registered: </p>
+                    </div>
+                    <div class="txt">
+                        <p>Sithat</p>
+                        <p>27-06-2025</p>
+                        <p>01-06-2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/sale.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/setting.js"></script>
+
+</body>
+</html>

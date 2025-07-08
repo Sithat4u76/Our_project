@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sale.css">
+    <title>Sale</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar" id="sideBar">
+            <button class="close-btn" onclick="MenuToggle()">✖</button>
+            <div class="profile" >
+                <div class="img" id="preview1"></div>
+            </div>
+            <div class="role"><span>Role:</span>Admin</div>
+            <ul>
+                <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
+                <li><a href="/html/category.html"><img src="/assets/icons/category.png" width="30px"> Category </a></li>
+                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
+                <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
+                <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
+                <li><a href="/html//salereport.html"><img src="/assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
+                <li><a href="/html/user.html"><img src="/assets/icons/circle-user.png" width="30px"> User </a></li>
+                <li><a href="/html/setting.html"><img src="/assets/icons/settings-sliders.png" width="30px"> Setting </a></li>
+                <li><a href="/index.html"> <img src="/assets/icons/exit.png" width="30px"> Log Out </a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="header">
+                <div class="menu" onclick="MenuToggle()""><img src="/assets/icons/menu-burger.png" alt=""></div>
+                <h1>POS Mangement System</h1>
+                <div class="right_header">
+                    <input type="text" id="myFormattedDate" readonly>
+                    <input type="time" id="myTime">
+                    <div class="icon-chat"><img src="/assets/icons/comment-alt.png" width="30px"></div>
+                    <div class="profileName">Sithat</div>
+                    <div class="img" id="preview2"></div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- remove my code and-->
+            <!-- write content here --> 
+
+            <div id="sale_container">
+
+                <header>
+                    <div class="container header-content">
+                        <h1>My Store</h1>
+                        <nav>
+                            <ul id="categoryList"></ul>
+                        </nav>
+                        <div class="search-bar">
+                        <input type="text" placeholder="Search..." id="searchInput"/>
+                        </div>
+                        <button class="cart-btn" onclick="cartShow()">
+                            <img src="/assets/icons/shopping-cart.png" width="15px">
+                            <span id="cartCount">0</span>
+                        </button>
+                    </div>
+                </header>
+
+                <main class="container">
+                <div id="loading" class="loading">Loading products...</div>
+                <div class="products-grid" id="productListings"></div>
+                </main>
+
+                <!-- Modal -->
+                <div id="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal()">&times;</span>
+                    <div class="modal-image"></div>
+                    <div class="modal-details"></div>
+                </div>
+                </div>
+
+                <!-- Cart Sidebar -->
+                <div id="cart">
+                <div id="close-cart" onclick="cartClose()">X</div>
+                <div class="cart-header">Your Cart</div>
+                <ul class="cart-items"></ul>
+                <div class="cart-totals">
+                    <div><strong>Subtotal:</strong> <span id="cart-subtotal">0.00</span></div>
+                    <div><strong>Discount (3%):</strong> <span id="cart-discount">0.00</span></div>
+                    <div><strong>Tax (10%):</strong> <span id="cart-tax">0.00</span></div>
+                    <div><strong>Total:</strong> <span id="cart-total">0.00</span></div>
+                    <button id="checkoutBtn" onclick="handleCheckout()">🛒 Checkout</button> <!-- NEW -->
+                </div>
+                </div>
+
+                <footer>
+                &copy; <script>document.write(new Date().getFullYear())</script> My Store. All rights reserved.
+                </footer>
+            </div>
+
+            
+            
+            <!--end write content here --> 
+            
+            
+        </div>
+    </div>
+    
+    <script src="/js/sale.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

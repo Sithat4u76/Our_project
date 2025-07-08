@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #4f46e5;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+#salereport_container {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 170px;
+}
+.salereport-header {
+    background: var(--primary-color);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.salereport-content {
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.salereport-search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.salereport-search-bar input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.salereport-search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
+}
+
+.salereport-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    gap: 20px;
+}
+
+.salereport-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.salereport-card:hover {
+    transform: translateY(-5px);
+}
+
+.salereport-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.salereport-card p {
+    margin: 6px 0;
+}
+
+.salereport-specs,
+.salereport-inclusions {
+    background: #f3f4f6;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.loading {
+    text-align: center;
+    margin: 50px 0;
+    color: var(--text-light);
+}
+
+.salereport-footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+@media (max-width: 600px) {
+    .card {
+    padding: 15px;
+    }
+}
