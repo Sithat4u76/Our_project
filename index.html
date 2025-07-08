@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <div class="login-container">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Login/Register UI</title>
-<link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-<div class="container">
-<div class="tabs">
-<button id="loginTab" class="active">Login</button>
-<button id="registerTab">Register</button>
-</div>
+  <!-- start container -->
+  <div class="container" >
+    <!-- start Login content  -->
+    <div class="login-container" id="login-container" id="loginForm">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+      </div>
+      <button type="submit" class="login-btn" onclick="userLogin()">Login</button>
+      <p>Don't have an account? <a onclick="show_register()">Register</a></p>
+    </div>
+    <!-- end Login content -->
+  
+    <!-- start Register content  -->
+    <div class="register-container" id="register-container">
+      <h2>Register</h2>
+      <div class="form">
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" id="name" name="register_name">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="register_username" name="register_username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="register_password" name="register_password">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="text" id="email" name="eamil">
+        </div>
+        <div class="form-group">
+          <label for="phone">phone</label>
+          <input type="text" id="phone" name="phone">
+        </div>
+        <button type="submit" onclick="register()" class="register-btn">Register</button>
+      </div>
+      <div class="login-link">
+        Already have an account? <a onclick="show_login()">Login</a>
+      </div>
+    </div>
+    <!-- end register content -->
 
-<!-- Login Form -->
-<form id="loginForm" class="form active">
-<input type="email" placeholder="Email" requiregit branch -M maind value="annaschawdhary157@gmail.com"/>
-<input type="password" placeholder="Password" required />
-<button type="submit" class="btn"><i class="fa fa-sign-in-alt"></i> Login</button>
-<p class="or">Or continue with</p>
-<div class="socials">
-<button class="social">G</button>
-<button class="social">f</button>
-<button class="social">t</button>
-</div>
-</form>
+  </div>
+  <!-- end container -->
 
-<!-- Register Form -->
-<form id="registerForm" class="form">
-<input type="text" placeholder="Full Name" required />
-<input type="email" placeholder="Email" required />
-<input type="password" placeholder="Password" required />
-<input type="password" placeholder="Confirm Password" required />
-<button type="submit" class="btn"><i class="fa fa-user-plus"></i> Register</button>
-<p class="or">Or sign up with</p>
-<div class="socials">
-<button class="social">G</button>
-<button class="social">f</button>
-<button class="social">t</button>
-</div>
-</form>
-</div>
-<script src="login.js"></script>
+  <script src="/js/login.js"></script>
 </body>
+
 </html>
