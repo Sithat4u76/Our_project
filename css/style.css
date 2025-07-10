@@ -53,7 +53,7 @@ overflow-y: scroll;
 overflow-x: hidden;
 }
 .sideBar::-webkit-scrollbar {
-width: 1px; 
+width: 0px; 
 }
 
 .sideBar::-webkit-scrollbar-track {

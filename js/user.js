@@ -15,7 +15,7 @@ function Getapi() {
           <td contenteditable="true" class="editable " data-field="name">${user.name}</td>
           <td contenteditable="true" class="editable" data-field="role"><span class="admin">${user.role}</span></td>
           <td contenteditable="true" class="editable" data-field="stature">${user.stature||"Not Married"}</td>
-          <td contenteditable="true" class="editable" data-field="phone">0${user.phone}</td>
+          <td contenteditable="true" class="editable" data-field="phone">${user.phone}</td>
           <td><label class="switch"><input type="checkbox" ${user.stature === "TRUE" ? "checked" : ""}><span class="slider round"></span></label></td>
           <td contenteditable="true" class="editable" data-field="email">${user.email}</td>
           <td>${user.last_login||formatDate(user.last_login)}</td>

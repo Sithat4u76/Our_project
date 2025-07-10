@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/product.css">
-    <title>Product</title>
+    <link rel="stylesheet" href="../css/customer.css">
+    <title>Customer</title>
 
 </head>
 <body>
@@ -18,7 +18,7 @@
             <div class="role"><span>Role:</span>Admin</div>
             <ul>
                 <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
-                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
+                <li><a href="/html/customer.html" ><img src="/assets/icons/customer-hunt.png" width="30px"> customer </a></li>
                 <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
                 <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
                 <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
@@ -44,34 +44,34 @@
 
             <!-- remove my code and-->
             <!-- write content here --> 
-            <div class="product-container">
-                <div class="product-header">
-                <h1>Product Store</h1>
+            <div class="customer-container">
+                <div class="customer-header">
+                <h1>Customer Store</h1>
                 </div>
 
-                <div class="product-content">
+                <div class="customer-content">
 
                     <!-- Search -->
-                    <div class="product-search-box-content">
-                        <input class="search-product" type="text" id="product-searchInput" placeholder="Search by Product ID..." />
-                        <button id="btn-search-product" onclick="searchProduct()">Search</button>
-                        <button class="btn-reset-product" onclick="resetSearch()">Reset</button>
+                    <div class="customer-search-box-content">
+                        <input class="search-customer" type="text" id="customer-searchInput" placeholder="Search by Customer ID..." />
+                        <button id="btn-search-customer" onclick="searchcustomer()">Search</button>
+                        <button class="btn-reset-customer" onclick="resetSearch()">Reset</button>
                     </div>
 
                     <!-- Actions -->
                     <div class="flex-row">
-                        <button class="product-btn" onclick="openModal('add')">+ Add Product</button>
+                        <button class="customer-btn" onclick="openModal('add')">+ Add Customer</button>
                     </div>
 
                     <!-- Table -->
-                    <table id="productTable">
+                    <table id="customerTable">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Type</th>
-                            <th>Size</th>
-                            <th>Price</th>
-                            <th>In Stock</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
                             <th>Image</th>
                             <th>Actions</th>
                         </tr>
@@ -79,65 +79,66 @@
                         <tbody></tbody>
                     </table>
                 </div>
-                <!-- Add Product Modal -->
+                <!-- Add customer Modal -->
                 <div id="addModal" class="modal">
                 <div class="modal-overlay" onclick="closeModal('add')"></div>
                 <div class="modal-content" onclick="event.stopPropagation()">
                     <button class="modal-close" onclick="closeModal('add')">&times;</button>
-                    <h2>Add New Product</h2>
-                    <form id="product-addForm">
+                    <h2>Add New Custome</h2>
+                    <form id="customer-addForm">
                     <label>ID:</label>
-                    <input type="text" name="id" placeholder="Product ID" required />
+                    <input type="text" name="id" placeholder="Customer ID" required />
 
-                    <label>Type:</label>
-                    <input type="text" name="type" placeholder="e.g., Shirt, Pants" required />
+                    <label>Name:</label>
+                    <input type="text" name="name"  required />
 
-                    <label>Size:</label>
-                    <input type="text" name="size" placeholder="e.g., L, XL" required />
+                    <label>Email:</label>
+                    <input type="text" name="email"  required />
 
-                    <label>Price:</label>
-                    <input type="number" name="price" step="0.01" placeholder="e.g., 19.99" required />
+                    <label>Phone:</label>
+                    <input type="number" name="phone" required />
 
-                    <label>In Stock:</label>
-                    <input type="number" name="instock" placeholder="e.g., 50" required />
+                    <label>Address:</label>
+                    <input type="text" name="address" required />
 
                     <label>Image URL:</label>
                     <input type="url" name="image" placeholder="https://example.com/image.jpg " required />
 
                     <div class="modal-actions">
-                        <button type="submit" class="btn-submit">Add Product</button>
+                        <button type="submit" class="btn-submit">Add Customer</button>
                         <button type="button" class="btn-cancel" onclick="closeModal('add')">Cancel</button>
                     </div>
                     </form>
                 </div>
                 </div>
 
-                <!-- Edit Product Modal -->
+                <!-- Edit customer Modal -->
                 <div id="editModal" class="modal">
                 <div class="modal-overlay" onclick="closeModal('edit')"></div>
                 <div class="modal-content" onclick="event.stopPropagation()">
                     <button class="modal-close" onclick="closeModal('edit')">&times;</button>
-                    <h2>Edit Product</h2>
-                    <form id="product-editForm">
-                    <input type="hidden" name="id" />
+                    <h2>Edit Customer</h2>
+                    <form id="customer-editForm">
+                    <label>ID:</label>
+                    <input type="text" name="id" />
                     
-                    <label>Type:</label>
-                    <input type="text" name="type" required />
+                    <label>Name:</label>
+                    <input type="text" name="name" required />
 
-                    <label>Size:</label>
-                    <input type="text" name="size" required />
+                    <label>Eamil:</label>
+                    <input type="text" name="email" required />
 
-                    <label>Price:</label>
-                    <input type="number" name="price" step="0.01" required />
+                    <label>Phone:</label>
+                    <input type="number" name="phone" step="0.01" required />
 
-                    <label>In Stock:</label>
-                    <input type="number" name="instock" required />
+                    <label>Address:</label>
+                    <input type="text" name="address" required />
 
                     <label>Image URL:</label>
                     <input type="url" name="image" required />
 
                     <div class="modal-actions">
-                        <button type="submit" class="btn-submit">Update Product</button>
+                        <button type="submit" class="btn-submit">Update Customer</button>
                         <button type="button" class="btn-cancel" onclick="closeModal('edit')">Cancel</button>
                     </div>
                     </form>
@@ -147,7 +148,7 @@
             <!-- end content --> 
         </div>
     </div>
-    <script src="/js/product.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="../js/customer.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

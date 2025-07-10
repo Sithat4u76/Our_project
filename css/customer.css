@@ -15,7 +15,7 @@ body {
   background: #f5f7fa;
   color: var(--dark);
 }
-.product-container{
+.customer-container{
   max-width: 100%;
   min-height: 100vh;
   padding: 20px;
@@ -24,7 +24,7 @@ body {
   margin-top: 100px;
 }
 
-.product-header {
+.customer-header {
   color: white;
   padding: 20px;
   text-align: center;
@@ -32,12 +32,12 @@ body {
 
 
 
-.product-header h1 {
+.customer-header h1 {
   margin: 0;
   font-size: 2rem;
 }
 
-.product-btn {
+.customer-btn {
   background: var(--primary);
   color: white;
   padding: 10px 16px;
@@ -47,7 +47,7 @@ body {
   transition: background 0.3s ease;
 }
 
-.product-btn:hover {
+.customer-btn:hover {
   background: #155ea5;
 }
 
@@ -59,7 +59,7 @@ body {
   flex-wrap: wrap;
 }
 
-#productTable {
+#customerTable {
   width: 100%;
   border-collapse: collapse;
   background: white;
@@ -69,38 +69,38 @@ body {
   margin-top: 20px;
 }
 
-#productTable th, #productTable td {
+#customerTable th, #customerTable td {
   text-align: left;
   padding: 12px 16px;
   border-bottom: 1px solid #eee;
 }
 
-#productTable th {
+#customerTable th {
   background: var(--light);
 }
 
-.product-search-box{
+.customer-search-box{
  margin-top: 50px;
 }
 
-.product-img {
+.customer-img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.product-actions button {
+.customer-actions button {
   margin-right: 6px;
   padding: 6px 10px;
   font-size: 0.9rem;
 }
 
-.product-actions .product-edit {
+.customer-actions .customer-edit {
   background: #1a73e8;
 }
 
-.product-actions .delete {
+.customer-actions .delete {
   background: #d93025;
 }
 
@@ -133,11 +133,11 @@ body {
 .modal-content h2 {
   margin-top: 0;
 }
-.btn-reset-product:hover{
+.btn-reset-customer:hover{
   background-color: #1a73e8;
   transition: 0.5s all;
 }
-.btn-reset-product{
+.btn-reset-customer{
   padding: 10px 15px;
   max-height: 30px;
   display: flex;
@@ -146,11 +146,11 @@ body {
   border: none;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
-#btn-search-product:hover{
+#btn-search-customer:hover{
   background-color: #1a73e8;
   transition: 0.5s all;
 }
-#btn-search-product{
+#btn-search-customer{
   padding: 10px 15px;
   max-height: 30px;
   display: flex;
@@ -159,7 +159,7 @@ body {
   border: none;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
-.search-product{
+.search-customer{
   width: 30%;
   margin: 10px 0;
   padding: 8px 16px;
@@ -301,7 +301,7 @@ body {
   }
 }
 
-.product-search-box-content{
+.customer-search-box-content{
   display: flex;
   gap: 20px;
   align-items: center;

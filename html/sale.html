@@ -18,7 +18,6 @@
             <div class="role"><span>Role:</span>Admin</div>
             <ul>
                 <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
-                <li><a href="/html/category.html"><img src="/assets/icons/category.png" width="30px"> Category </a></li>
                 <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
                 <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
                 <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
@@ -48,48 +47,48 @@
 
             <div id="sale_container">
 
-                <header>
-                    <div class="container header-content">
-                        <h1>My Store</h1>
-                        <nav>
-                            <ul id="categoryList"></ul>
-                        </nav>
-                        <div class="search-bar">
-                        <input type="text" placeholder="Search..." id="searchInput"/>
-                        </div>
-                        <button class="cart-btn" onclick="cartShow()">
-                            <img src="/assets/icons/shopping-cart.png" width="15px">
-                            <span id="cartCount">0</span>
+                <!-- Header -->
+                <div class="sale-header">
+                    <div class="logo">Clothing Store</div>
+                    
+                    <div class="sale-header-content">
+                        <input type="text" class="search-bar" id="searchInput" placeholder="Search products..." />
+                        <button class="cart-icon" onclick="toggleCart()">
+                            🛒
+                            <span class="cart-badge" id="cart-count">0</span>
                         </button>
                     </div>
-                </header>
 
-                <main class="container">
-                <div id="loading" class="loading">Loading products...</div>
-                <div class="products-grid" id="productListings"></div>
-                </main>
-
-                <!-- Modal -->
-                <div id="modal">
-                <div class="modal-content">
-                    <span class="modal-close" onclick="closeModal()">&times;</span>
-                    <div class="modal-image"></div>
-                    <div class="modal-details"></div>
-                </div>
+                    <div class="category-buttons">
+                        <button data-category="all" class="active">All</button>
+                        <button data-category="t-shirt">T-Shirt</button>
+                        <button data-category="hoodie">Hoodie</button>
+                        <button data-category="jeans">Jeans</button>
+                        <button data-category="pants">Pants</button>
+                    </div>
                 </div>
 
-                <!-- Cart Sidebar -->
-                <div id="cart">
-                <div id="close-cart" onclick="cartClose()">X</div>
-                <div class="cart-header">Your Cart</div>
-                <ul class="cart-items"></ul>
-                <div class="cart-totals">
-                    <div><strong>Subtotal:</strong> <span id="cart-subtotal">0.00</span></div>
-                    <div><strong>Discount (3%):</strong> <span id="cart-discount">0.00</span></div>
-                    <div><strong>Tax (10%):</strong> <span id="cart-tax">0.00</span></div>
-                    <div><strong>Total:</strong> <span id="cart-total">0.00</span></div>
-                    <button id="checkoutBtn" onclick="handleCheckout()">🛒 Checkout</button> <!-- NEW -->
-                </div>
+                <!-- Main Content -->
+                <div class="main">
+                    <div class="products" id="products-container">
+                    <!-- Products will be loaded here -->
+                    </div>
+                    <div class="cart-sidebar" id="cart-sidebar" style="display: none;">
+                    <div class="cart-close">
+                        <button onclick="toggleCart()">✕</button>
+                    </div>
+                    <h2>Your Cart</h2>
+                    <div id="cart-items-container"></div>
+
+                    <div class="subtotal">Subtotal: $<span id="subtotal">0.00</span></div>
+                    <div class="discount">Discount (3%): $<span id="discount">0.00</span></div>
+                    <div class="tax">Tax (10%): $<span id="tax">0.00</span></div>
+                    <div class="total">Total: $<span id="total">0.00</span></div>
+
+                    <button class="checkout-btn">
+                        Checkout
+                    </button>
+                    </div>
                 </div>
 
                 <footer>
