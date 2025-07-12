@@ -537,6 +537,7 @@ display: none;
     z-index: 1000;
 }
 
+
 .sideBar.show {
     transform: translateX(0);
 }

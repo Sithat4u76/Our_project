@@ -20,7 +20,7 @@
                 <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
                 <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
                 <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
-                <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="/html/supplier.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
                 <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
                 <li><a href="/html//salereport.html"><img src="/assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
                 <li><a href="/html/user.html"><img src="/assets/icons/circle-user.png" width="30px"> User </a></li>
@@ -46,39 +46,37 @@
             <!-- write content here --> 
 
             <div id="salereport_container">
-              <header>
-                <h1>Sales Report</h1>
-                <p id="timestamp">Loading...</p>
+              <!-- Header -->
+              <header class="bg-white shadow-md p-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-indigo-600">Sales Report</h1>
               </header>
 
-              <main>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Product</th>
-                      <th>Size</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody id="report-body">
-                    <!-- Product rows will be inserted here -->
-                  </tbody>
-                </table>
-
-                <div class="summary">
-                  <p><strong>Subtotal:</strong> $<span id="report-subtotal">0.00</span></p>
-                  <p><strong>Discount (3%):</strong> -$<span id="report-discount">0.00</span></p>
-                  <p><strong>Tax (10%):</strong> +$<span id="report-tax">0.00</span></p>
-                  <h3><strong>Total:</strong> $<span id="report-total">0.00</span></h3>
-                  <button class="btn-print" onclick="window.print()">🖨️ Print Report</button>
-                </div>
-
-                <div class="footer">
-                  Thank you for your purchase! 🛒
+              <!-- Main Content -->
+              <main class="p-6 max-w-6xl mx-auto">
+                <div class="overflow-x-auto rounded-lg shadow-md bg-white">
+                  <table class="w-full table-auto">
+                    <thead class="bg-indigo-600 text-white">
+                      <tr>
+                        <th class="px-4 py-3 text-left">Timestamp</th>
+                        <th class="px-4 py-3 text-left">Customer Name</th>
+                        <th class="px-4 py-3 text-left">Items</th>
+                        <th class="px-4 py-3 text-right">Subtotal</th>
+                        <th class="px-4 py-3 text-right">Discount</th>
+                        <th class="px-4 py-3 text-right">Tax</th>
+                        <th class="px-4 py-3 text-right">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody id="orders-body" class="divide-y divide-gray-200">
+                      <!-- Orders will be inserted here -->
+                    </tbody>
+                  </table>
                 </div>
               </main>
+
+              <!-- Footer -->
+              <footer class="mt-12 text-center text-gray-500 text-sm py-4 border-t border-gray-200">
+                &copy; <span id="current-year"></span> Sales Reporting System
+              </footer>
                 
             </div>
 

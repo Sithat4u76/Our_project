@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/supplier.css">
+    <title>Sale</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar" id="sideBar">
+            <button class="close-btn" onclick="MenuToggle()">✖</button>
+            <div class="profile" >
+                <div class="img" id="preview1"></div>
+            </div>
+            <div class="role"><span>Role:</span>Admin</div>
+            <ul>
+                <li><a href="../html/dashboard.html"> <img src="../assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
+                <li><a href="../html/product.html" ><img src="../assets/icons/product-hunt.png" width="30px"> product </a></li>
+                <li><a href="../html/customer.html"><img src="../assets/icons/user-headset.png" width="30px"> Customer </a></li>
+                <li><a href="../html/supplier.html"><img src="../assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
+                <li><a href="../html//sale.html"><img src="../assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
+                <li><a href="../html//salereport.html"><img src="../assets/icons/bug-report.png" width="30px"> Sales Report </a></li>
+                <li><a href="../html/user.html"><img src="../assets/icons/circle-user.png" width="30px"> User </a></li>
+                <li><a href="../html/setting.html"><img src="../assets/icons/settings-sliders.png" width="30px"> Setting </a></li>
+                <li><a href="../index.html"> <img src="../assets/icons/exit.png" width="30px"> Log Out </a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="header">
+                <div class="menu" onclick="MenuToggle()""><img src="/assets/icons/menu-burger.png" alt=""></div>
+                <h1>POS Mangement System</h1>
+                <div class="right_header">
+                    <input type="text" id="myFormattedDate" readonly>
+                    <input type="time" id="myTime">
+                    <div class="icon-chat"><img src="/assets/icons/comment-alt.png" width="30px"></div>
+                    <div class="profileName">Sithat</div>
+                    <div class="img" id="preview2"></div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- remove my code and-->
+            <!-- write content here --> 
+
+            <div class="supplier-container">
+                <div class="supplier-header">
+                <h1>Supplier Store</h1>
+                </div>
+
+                <div class="supplier-content">
+
+                    <!-- Search -->
+                    <div class="supplier-search-box-content">
+                        <input class="search-supplier" type="text" id="supplier-searchInput" placeholder="Search by supplier ID..." />
+                        <button id="btn-search-supplier" onclick="searchsupplier()">Search</button>
+                        <button class="btn-reset-supplier" onclick="resetSearch()">Reset</button>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex-row">
+                        <button class="supplier-btn" onclick="openModal('add')">+ Add supplier</button>
+                    </div>
+
+                    <!-- Table -->
+                    <table id="supplierTable">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Contect</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- Add supplier Modal -->
+                <div id="addModal" class="modal">
+                <div class="modal-overlay" onclick="closeModal('add')"></div>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="closeModal('add')">&times;</button>
+                    <h2>Add New supplier</h2>
+                    <form id="supplier-addForm">
+                    <label>ID:</label>
+                    <input type="text" name="id" placeholder="Supplier ID" required />
+
+                    <label>Name:</label>
+                    <input type="text" name="name" placeholder="Supplier Name" required />
+
+                    <label>Contect:</label>
+                    <input type="text" name="contect" placeholder="link FB or TEL" required />
+
+                    <label>Phone:</label>
+                    <input type="number" name="phone" placeholder="eg. +85509302983" required />
+
+                    <label>Email:</label>
+                    <input type="text" name="email" placeholder="eg. supplier@gmail.com" required />
+
+                    <label>Image URL:</label>
+                    <input type="url" name="image" placeholder="https://example.com/image.jpg " />
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-submit">Add supplier</button>
+                        <button type="button" class="btn-cancel" onclick="closeModal('add')">Cancel</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+
+                <!-- Edit supplier Modal -->
+                <div id="editModal" class="modal">
+                <div class="modal-overlay" onclick="closeModal('edit')"></div>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="closeModal('edit')">&times;</button>
+                    <h2>Edit supplier</h2>
+                    <form id="supplier-editForm">
+                    <input type="hidden" name="id" />
+                    
+                    <label>Name:</label>
+                    <input type="text" name="name" required />
+
+                    <label>contect:</label>
+                    <input type="text" name="conntect" required />
+
+                    <label>Phone:</label>
+                    <input type="number" name="phone" step="0.01" required />
+
+                    <label>Email:</label>
+                    <input type="email" name="email" required />
+
+                    <label>Image URL:</label>
+                    <input type="url" name="image" required />
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-submit">Update Supplier</button>
+                        <button type="button" class="btn-cancel" onclick="closeModal('edit')">Cancel</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+
+            
+            
+            <!--end write content here --> 
+            
+            
+        </div>
+    </div>
+    
+    <script src="../js/supplier.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
