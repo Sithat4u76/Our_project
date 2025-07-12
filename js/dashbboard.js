@@ -1,15 +1,11 @@
 let API_CS_URL = "https://script.google.com/macros/s/AKfycbz0A48OfPDoZTQ3AHqJZfaVsq-R-a21BFjr1047X2duCC7CWZwHBVtS1a0l6BjfYABK/exec?action=read";
 let API_SP_URL = "https://script.google.com/macros/s/AKfycbypSGwxoeb6etcmxswpijkqTgFCE8xxz4sYNMXhS358uVJUKqr79Xs6IKBhJBJjdqla/exec?action=read";
 let API_PD_URL = "https://script.google.com/macros/s/AKfycbwhaTdN_5Efrlt42FbGDmjnRgrHVCZYtJ-WjscZBfBoQL9x7fP6XfqAy2iIqPMjYb8I/exec?action=read";
-let API_US_URL = "script.google.com/macros/s/AKfycbwIPnH9_NT5w-F-znQypP5dRPdSY8k9zZNZNvhJpyAtBZOgheEpdPnJtVp0f0A7wu-v/exec/exec?action=read";
+let API_US_URL = "https://script.google.com/macros/s/AKfycbwIPnH9_NT5w-F-znQypP5dRPdSY8k9zZNZNvhJpyAtBZOgheEpdPnJtVp0f0A7wu-v/exec/exec?action=read";
 
 
 //=============== Meymey javaScript================///
 //======= Catch name and role to welcome=============
-const hi = document.getElementById("hi");
-hi.innerHTML = `${localStorage.getItem("name")}(${localStorage.getItem(
-  "role"
-)})<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="red"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></svg>`;
 //   ======= Catch name and role to welcome=============
 
 //==============Chart=========================\\\
@@ -147,7 +143,7 @@ async function loadSupplierCount() {
     const res = await fetch(API_SP_URL);
     const result = await res.json();
     if (result.status === 'success') {
-      document.getElementById('total-supplier').textContent = result.data.length;
+      document.getElementById('total-supplier').innerHTML += result.data.length;
     }
   } catch (err) {
     console.error('Failed to load suppliers:', err);
@@ -158,18 +154,18 @@ async function loadCustomerCount() {
     const res = await fetch(API_CS_URL);
     const result = await res.json();
     if (result.status === 'success') {
-      document.getElementById('total-customer').textContent = result.data.length;
+      document.getElementById('total-customer').innerHTML += result.data.length;
     }
   } catch (err) {
     console.error('Failed to load Customer:', err);
   }
 }
-async function loadSupplierCount() {
+async function loadUserCount() {
   try {
     const res = await fetch(API_US_URL);
     const result = await res.json();
     if (result.status === 'success') {
-      document.getElementById('total-user').textContent = result.data.length;
+      document.getElementById('total-user').innerHTML += result.data.length;
     }
   } catch (err) {
     console.error('Failed to load user:', err);
@@ -180,7 +176,7 @@ async function loadProductCount() {
     const res = await fetch(API_PD_URL);
     const result = await res.json();
     if (result.status === 'success') {
-      document.getElementById('total-product').textContent = result.data.length;
+      document.getElementById('total-product').innerHTML += result.data.length;
     }
   } catch (err) {
     console.error('Failed to load product:', err);
@@ -188,12 +184,34 @@ async function loadProductCount() {
 }
 async function loadCustomerCount() {
   try {
-    const res = await fetch(SUPPLIER_API_URL);
+    const res = await fetch(API_CS_URL);
     const result = await res.json();
     if (result.status === 'success') {
-      document.getElementById('total-supplier').textContent = result.data.length;
+      document.getElementById('total-customer').innerHTML += result.data.length;
     }
   } catch (err) {
-    console.error('Failed to load suppliers:', err);
+    console.error('Failed to load customer:', err);
   }
 }
+function welcome() {
+  let name = document.getElementById(hi);
+    fetch(`${API_US_URL}`)
+    .then(res => res.json())
+    .then(data => {
+      name.innerHTML = "";
+      data.data.forEach(user => {
+        const li = document.createElement("ul");
+
+        ul.innerHTML = `
+          ${user.name}
+        `;
+
+        row.appendChild(tr);
+      });
+    });
+}
+welcome();
+loadCustomerCount();
+loadProductCount();
+loadUserCount();
+loadSupplierCount();
