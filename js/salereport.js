@@ -1,56 +1,35 @@
-const apiURL = 'https://script.google.com/macros/s/AKfycbzqYCYRSTv9Rj5jlC9n_5OoMYp8nVpHDGP_fhSmplO28ztJwPsFfSAXHYZ1vwYjrrYW/exec';
+const reportData = JSON.parse(localStorage.getItem('salesReportData'));
 
-let products = [];
+    if (!reportData) {
+      document.body.innerHTML = `
+        <div class="container text-center py-20">
+          <h2 class="text-2xl font-bold text-gray-600">No data available.</h2>
+          <p class="mt-2 text-gray-500">Please go back and checkout from the cart.</p>
+        </div>
+      `;
+    } else {
+      document.getElementById('timestamp').textContent = reportData.timestamp;
 
-async function fetchProducts() {
-try {
-    const response = await fetch(apiURL);
-    if (!response.ok) throw new Error("Failed to load data");
+      const tbody = document.getElementById('report-body');
 
-    products = await response.json();
-    renderProducts(products);
+      reportData.cart.forEach(item => {
+        const row = document.createElement('tr');
 
-    document.getElementById("loading").style.display = "none";
+        row.innerHTML = `
+          <td data-label="Product" class="center">
+            <img src="${item.image}" alt="${item.name}" style="width:40px;height:40px;object-fit:cover;margin-right:10px;border-radius:4px;">
+            ${item.name}
+          </td>
+          <td data-label="Size">${item.size}</td>
+          <td data-label="Price">$${parseFloat(item.price).toFixed(2)}</td>
+          <td data-label="Quantity">${item.quantity}</td>
+          <td data-label="Total">$${(item.price * item.quantity).toFixed(2)}</td>
+        `;
+        tbody.appendChild(row);
+      });
 
-} catch (error) {
-    console.error(error);
-    document.getElementById("loading").textContent = "❌ Error loading products.";
-}
-}
-
-function renderProducts(data) {
-const container = document.getElementById("productsContainer");
-container.innerHTML = "";
-
-if (data.length === 0) {
-    container.innerHTML = "<p style='text-align:center;'>No products found.</p>";
-    return;
-}
-
-data.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "salereport-card";
-    card.innerHTML = `
-    <h3>${product.name || ''}</h3>
-    <p><strong>ID:</strong> ${product.id || ''}</p>
-    <p><strong>Category:</strong> ${product.category || ''}</p>
-    <p><strong>Price:</strong> $${parseFloat(product.price).toFixed(2)}</p>
-    <p><strong>Stock:</strong> ${product.stock || 0}</p>
-    <p><strong>Specs:</strong></p>
-    <div class="salereport-specs"><pre>${JSON.stringify(product.specs, null, 2)}</pre></div>
-    <p><strong>Inclusions:</strong></p>
-    <div class="salereport-inclusions"><pre>${JSON.stringify(product.inclusions, null, 2)}</pre></div>
-    `;
-    container.appendChild(card);
-});
-}
-
-document.getElementById("searchInput").addEventListener("input", function () {
-const filter = this.value.toLowerCase();
-const filtered = products.filter(p =>
-    (p.name && p.name.toLowerCase().includes(filter))
-);
-renderProducts(filtered);
-});
-
-window.onload = fetchProducts;
+      document.getElementById('report-subtotal').textContent = parseFloat(reportData.subtotal).toFixed(2);
+      document.getElementById('report-discount').textContent = parseFloat(reportData.discount).toFixed(2);
+      document.getElementById('report-tax').textContent = parseFloat(reportData.tax).toFixed(2);
+      document.getElementById('report-total').textContent = parseFloat(reportData.total).toFixed(2);
+    }

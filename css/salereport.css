@@ -1,19 +1,4 @@
-:root {
-    --primary-color: #4f46e5;
-    --bg-color: #f9fafb;
-    --card-bg: #ffffff;
-    --text-dark: #111827;
-    --text-light: #6b7280;
-    --border-radius: 12px;
-    --shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-}
 
 #salereport_container {
     max-width: 100%;
@@ -23,99 +8,139 @@ body {
     background-color: rgb(255, 255, 255);
     margin-top: 170px;
 }
-.salereport-header {
-    background: var(--primary-color);
-    padding: 20px;
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ffffff;
+    --bg-color: #f9fafb;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
     color: white;
+    padding: 2rem 1rem;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.salereport-content {
-    max-width: 100%;
-    margin: 30px auto;
-    padding: 0 20px;
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.salereport-search-bar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+    margin-bottom: 20px;
 }
 
-.salereport-search-bar input {
+main {
+    background: white;
+    padding: 2rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-top: -2rem;
+}
+
+table {
     width: 100%;
-    max-width: 500px;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s ease;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
-.salereport-search-bar input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
 }
 
-.salereport-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+}
+.center{
+    display: flex;
+    align-items: center;
     gap: 20px;
 }
-
-.salereport-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 20px;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s ease;
+tr:hover {
+    background-color: #f9fafb;
+    transition: background-color 0.3s ease;
 }
 
-.salereport-card:hover {
-    transform: translateY(-5px);
+.summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
 }
 
-.salereport-card h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
+.summary h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
 }
 
-.salereport-card p {
-    margin: 6px 0;
-}
-
-.salereport-specs,
-.salereport-inclusions {
-    background: #f3f4f6;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    overflow-x: auto;
-}
-
-pre {
-    margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.loading {
+.footer {
+    margin-top: 3rem;
     text-align: center;
-    margin: 50px 0;
-    color: var(--text-light);
+    font-size: 0.9rem;
+    color: #9ca3af;
 }
 
-.salereport-footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    color: #aaa;
+.btn-print {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-print:hover {
+    background-color: #595cf9;
 }
 
 @media (max-width: 600px) {
-    .card {
-    padding: 15px;
+    table, thead, tbody, th, td, tr {
+    display: block;
+    }
+
+    th {
+    display: none;
+    }
+
+    tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    }
+
+    td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+    }
+
+    td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #6b7280;
     }
 }

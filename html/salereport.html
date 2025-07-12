@@ -46,23 +46,39 @@
             <!-- write content here --> 
 
             <div id="salereport_container">
-              <div class="salereport-header">
-                <h1>📊 Product Report Dashboard</h1>
-                <p class="salereport-subtitle">View all products stored in your Google Sheets</p>
-              </div>
+              <header>
+                <h1>Sales Report</h1>
+                <p id="timestamp">Loading...</p>
+              </header>
 
-              <div class="salereport-content">
-                <div class="salereport-search-bar">
-                  <input type="text" id="searchInput" placeholder="Search by product name..." />
+              <main>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Size</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="report-body">
+                    <!-- Product rows will be inserted here -->
+                  </tbody>
+                </table>
+
+                <div class="summary">
+                  <p><strong>Subtotal:</strong> $<span id="report-subtotal">0.00</span></p>
+                  <p><strong>Discount (3%):</strong> -$<span id="report-discount">0.00</span></p>
+                  <p><strong>Tax (10%):</strong> +$<span id="report-tax">0.00</span></p>
+                  <h3><strong>Total:</strong> $<span id="report-total">0.00</span></h3>
+                  <button class="btn-print" onclick="window.print()">🖨️ Print Report</button>
                 </div>
 
-                <div id="loading" class="loading">🔍 Loading products...</div>
-                <div id="productsContainer" class="salereport-cards"></div>
-              </div>
-
-              <footer class="salereport-footer">
-                &copy; 2025 Product Reporting System
-              </footer>
+                <div class="footer">
+                  Thank you for your purchase! 🛒
+                </div>
+              </main>
                 
             </div>
 
@@ -74,8 +90,8 @@
         </div>
     </div>
     
-    <script src="/js/salereport.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="../js/salereport.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 </html>

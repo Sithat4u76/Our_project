@@ -18,7 +18,7 @@
             <div class="role"><span>Role:</span>Admin</div>
             <ul>
                 <li><a href="/html/dashboard.html"> <img src="/assets/icons/dashboard-panel.png" width="30px">Dashboard</a></li>
-                <li><a href="/html/customer.html" ><img src="/assets/icons/customer-hunt.png" width="30px"> customer </a></li>
+                <li><a href="/html/product.html" ><img src="/assets/icons/product-hunt.png" width="30px"> Product </a></li>
                 <li><a href="/html/customer.html"><img src="/assets/icons/user-headset.png" width="30px"> Customer </a></li>
                 <li><a href="/html/suppliers.html"><img src="/assets/icons/supplier-alt.png" width="30px"> Suppliers </a></li>
                 <li><a href="/html//sale.html"><img src="/assets/icons/basket-shopping-simple.png" width="30px"> Sales </a></li>
@@ -54,7 +54,7 @@
                     <!-- Search -->
                     <div class="customer-search-box-content">
                         <input class="search-customer" type="text" id="customer-searchInput" placeholder="Search by Customer ID..." />
-                        <button id="btn-search-customer" onclick="searchcustomer()">Search</button>
+                        <button id="btn-search-customer" onclick="searchCustomer()">Search</button>
                         <button class="btn-reset-customer" onclick="resetSearch()">Reset</button>
                     </div>
 
@@ -76,7 +76,11 @@
                             <th>Actions</th>
                         </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <tr id="row">
+                                
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <!-- Add customer Modal -->
@@ -84,25 +88,25 @@
                 <div class="modal-overlay" onclick="closeModal('add')"></div>
                 <div class="modal-content" onclick="event.stopPropagation()">
                     <button class="modal-close" onclick="closeModal('add')">&times;</button>
-                    <h2>Add New Custome</h2>
+                    <h2>Add New Customer</h2>
                     <form id="customer-addForm">
                     <label>ID:</label>
                     <input type="text" name="id" placeholder="Customer ID" required />
 
                     <label>Name:</label>
-                    <input type="text" name="name"  required />
+                    <input type="text" name="name" placeholder="Customer Name"  required />
 
                     <label>Email:</label>
-                    <input type="text" name="email"  required />
+                    <input type="text" name="email" placeholder="Customer Email" required />
 
                     <label>Phone:</label>
-                    <input type="number" name="phone" required />
+                    <input type="number" name="phone" placeholder="Customer Phone" required />
 
                     <label>Address:</label>
-                    <input type="text" name="address" required />
+                    <input type="text" name="address" placeholder="Customer Address" required />
 
                     <label>Image URL:</label>
-                    <input type="url" name="image" placeholder="https://example.com/image.jpg " required />
+                    <input type="url" name="image" placeholder="https://example.com/image.jpg" required />
 
                     <div class="modal-actions">
                         <button type="submit" class="btn-submit">Add Customer</button>
@@ -120,22 +124,22 @@
                     <h2>Edit Customer</h2>
                     <form id="customer-editForm">
                     <label>ID:</label>
-                    <input type="text" name="id" />
+                    <input type="text" name="id"  placeholder="Customer ID" />
                     
                     <label>Name:</label>
-                    <input type="text" name="name" required />
+                    <input type="text" name="name"  placeholder="Customer Name" required />
 
-                    <label>Eamil:</label>
-                    <input type="text" name="email" required />
+                    <label>Eamaill:</label>
+                    <input type="text" name="email"  placeholder="Customer Email" required />
 
                     <label>Phone:</label>
-                    <input type="number" name="phone" step="0.01" required />
+                    <input type="number" name="phone"  placeholder="Customer Phone" required />
 
                     <label>Address:</label>
-                    <input type="text" name="address" required />
+                    <input type="text" name="address"  placeholder="Customer Address" required />
 
                     <label>Image URL:</label>
-                    <input type="url" name="image" required />
+                    <input type="url" name="image" placeholder="https://example.com/image.jpg " required />
 
                     <div class="modal-actions">
                         <button type="submit" class="btn-submit">Update Customer</button>
