@@ -1,3 +1,9 @@
+let API_CS_URL = "https://script.google.com/macros/s/AKfycbz0A48OfPDoZTQ3AHqJZfaVsq-R-a21BFjr1047X2duCC7CWZwHBVtS1a0l6BjfYABK/exec?action=read";
+let API_SP_URL = "https://script.google.com/macros/s/AKfycbypSGwxoeb6etcmxswpijkqTgFCE8xxz4sYNMXhS358uVJUKqr79Xs6IKBhJBJjdqla/exec?action=read";
+let API_PD_URL = "https://script.google.com/macros/s/AKfycbwhaTdN_5Efrlt42FbGDmjnRgrHVCZYtJ-WjscZBfBoQL9x7fP6XfqAy2iIqPMjYb8I/exec?action=read";
+let API_US_URL = "script.google.com/macros/s/AKfycbwIPnH9_NT5w-F-znQypP5dRPdSY8k9zZNZNvhJpyAtBZOgheEpdPnJtVp0f0A7wu-v/exec/exec?action=read";
+
+
 //=============== Meymey javaScript================///
 //======= Catch name and role to welcome=============
 const hi = document.getElementById("hi");
@@ -134,3 +140,60 @@ var options2 = {
         chart3.render();
       
 //==============Chart=========================\\\
+
+
+async function loadSupplierCount() {
+  try {
+    const res = await fetch(API_SP_URL);
+    const result = await res.json();
+    if (result.status === 'success') {
+      document.getElementById('total-supplier').textContent = result.data.length;
+    }
+  } catch (err) {
+    console.error('Failed to load suppliers:', err);
+  }
+}
+async function loadCustomerCount() {
+  try {
+    const res = await fetch(API_CS_URL);
+    const result = await res.json();
+    if (result.status === 'success') {
+      document.getElementById('total-customer').textContent = result.data.length;
+    }
+  } catch (err) {
+    console.error('Failed to load Customer:', err);
+  }
+}
+async function loadSupplierCount() {
+  try {
+    const res = await fetch(API_US_URL);
+    const result = await res.json();
+    if (result.status === 'success') {
+      document.getElementById('total-user').textContent = result.data.length;
+    }
+  } catch (err) {
+    console.error('Failed to load user:', err);
+  }
+}
+async function loadProductCount() {
+  try {
+    const res = await fetch(API_PD_URL);
+    const result = await res.json();
+    if (result.status === 'success') {
+      document.getElementById('total-product').textContent = result.data.length;
+    }
+  } catch (err) {
+    console.error('Failed to load product:', err);
+  }
+}
+async function loadCustomerCount() {
+  try {
+    const res = await fetch(SUPPLIER_API_URL);
+    const result = await res.json();
+    if (result.status === 'success') {
+      document.getElementById('total-supplier').textContent = result.data.length;
+    }
+  } catch (err) {
+    console.error('Failed to load suppliers:', err);
+  }
+}
