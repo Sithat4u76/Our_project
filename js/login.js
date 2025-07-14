@@ -20,7 +20,6 @@ function userLogin() {
         });
     })
 }
-
 function register() {
     let id = new Date();
     let name = document.getElementById("name");
@@ -38,14 +37,12 @@ function register() {
         phone: phone.value,
         role: "User"
       };
-
     fetch(url + "?" + new URLSearchParams(params), { method: "POST" })
     .then((response) => response.json())
     .then((data) => {
         alert("Login Success");
         show_login();
     });
-    
 }
 function show_login(){
     document.getElementById("register-container").style.display ="none";

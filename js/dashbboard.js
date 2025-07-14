@@ -17,11 +17,11 @@ var options1 = {
   series: [
     {
       name: "Users",
-      data: [10, 20, 15, 30, 40, 25],
+      data: [4, 6, 1, 2, 40, 25],
     },
   ],
   xaxis: {
-    categories: ["Products", "User", "Customer", "Earning"],
+    categories: ["Products", "User", "Customer", "Supplier"],
   },
   colors: ["#1c90d7"],
 };
@@ -48,7 +48,7 @@ var options2 = {
                 label: 'Total',
                 formatter: function (w) {
                   // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                  return 249
+                  return 13
                 }
               }
             }

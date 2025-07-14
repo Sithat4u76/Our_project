@@ -44,7 +44,6 @@ fetch(`${apiUrl}?action=read`)
 })
 .catch(err => {
   console.error("Error fetching data:", err);
-  alert("Failed to load customers.");
 });
 }
 

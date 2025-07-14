@@ -30,7 +30,9 @@ body {
   text-align: center;
 }
 
-
+table{
+  width: 100%;
+}
 
 .customer-header h1 {
   margin: 0;

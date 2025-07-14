@@ -17,7 +17,6 @@ async function loadProducts() {
     }
   } catch (error) {
     console.error("Error fetching products:", error);
-    alert("Could not connect to the server.");
   }
 }
 document
