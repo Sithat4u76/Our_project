@@ -11,7 +11,7 @@ function userLogin() {
             if (row.name == name.value && row.password == password.value) {
                 console.log(row.name)
                 alert("Login Success");
-                window.location.href = "../html/dashboard.html";
+                window.location.href = "/html/dashboard.html";
                 return;
             }
             else{
